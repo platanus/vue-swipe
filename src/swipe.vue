@@ -115,6 +115,20 @@
       }
     },
 
+    watch: {
+      auto() {
+        if (this.auto > 0) {
+          this.timer = setInterval(() => {
+            if (!this.dragging && !this.animating) {
+              this.next();
+            }
+          }, this.auto);
+        } else {
+          clearInterval(this.timer);
+        }
+      }
+    },
+
     methods: {
       swipeItemCreated() {
         if (!this.ready) return;

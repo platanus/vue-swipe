@@ -248,6 +248,8 @@
             removeClass(oldPage, 'is-active');
             addClass(newPage, 'is-active');
 
+            this.$emit('index-changed', newIndex);
+
             this.index = newIndex;
           }
 
